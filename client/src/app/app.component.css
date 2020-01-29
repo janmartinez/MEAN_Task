@@ -1,0 +1,32 @@
+*{
+}
+h1{
+color:black;
+font-family: 'Trocchi', serif;
+font-size: 65px;
+font-weight: normal;
+line-height: 48px;
+margin: 0;
+padding-top: 3%;
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color:#e83e8c;
+}
+
+.animate-pop-in {
+  animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+  opacity: 0;
+}
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem) scale(.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+  /* form */
+
+}
+
+

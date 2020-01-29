@@ -1,0 +1,14 @@
+.formbody{
+  width: 70%;
+  margin: 1rem auto;
+  background-color:rgb(59, 214, 214);
+
+}
+mat-form-field,
+.formtextarea{
+  width: 100%;
+}
+h3{
+  color:white;
+
+}

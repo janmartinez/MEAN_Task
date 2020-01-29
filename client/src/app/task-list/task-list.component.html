@@ -1,0 +1,30 @@
+<link href="https://fonts.googleapis.com/css?family=Lakki+Reddy&display=swap" rel="stylesheet">
+
+<h1 class="animate-pop-in text-center" > List of Tasks</h1>
+<br><br><br>
+<div class="text-center" id="list8">
+  <ul class="list-group" *ngFor = "let task of tasks; index as i">
+      <li > <a class="lista" (click)="oneTask(task._id, i)">{{task.title}}</a>
+      </li>
+
+      <li *ngIf="task.isVisible" >&#8608; Description: {{unoTask.description}} &#8606;</li>
+      <li *ngIf="task.isVisible && task.completed" >&#8608; Completed: Si! &#8606;</li>
+      <li *ngIf="task.isVisible && !task.completed" >&#8608; Completed: Nop! &#8606;
+          <form (submit) ="siCompleted(oneTask._id)" #postForm="ngForm">
+          <input value="true" type="hidden" name="oneTask.completed"
+            [(ngModel)]="unoTask.completed">
+            <!-- <input type="hidden" name="unoTask.title"
+            value="unoTask.title"
+            [(ngModel)]="unoTask.title">
+            <input type="hidden" name="unoTask.description"
+            value="unoTask.description"
+            [(ngModel)]="unoTask.description"> -->
+
+            <button style="border: none;" type="submit">&#9745;</button> <a (click)="noCompleted()">&#9746;</a>
+          </form>
+        </li>
+      <li class="" *ngIf="task.isVisible" ><a [routerLink]="['/edit', task._id]">&#9998;</a> &nbsp;&nbsp;<a (click)="deleteTask(task._id)">&#10007;</a></li>
+
+  </ul>
+      <button  class="btn btn-secondary bt " (click)="allTasks()">Get All Tasks</button>
+</div>

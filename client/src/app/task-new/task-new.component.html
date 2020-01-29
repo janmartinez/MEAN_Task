@@ -1,0 +1,43 @@
+<mat-card class="formbody">
+  <h3 class="text-center" >Create a Task</h3>
+  <br>
+  <form (submit) ="addTask()" #postForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Title"
+        type="text"
+        name="title"
+        [(ngModel)]="newTask.title"
+        required
+        minlength="3"
+        #title="ngModel">
+        <mat-error *ngIf="title.invalid">Please enter a title.</mat-error>
+
+    </mat-form-field>
+          <br>
+    <mat-form-field>
+      <textarea
+        class="formtextarea"
+        matInput
+        name="description"
+        placeholder="Description"
+        [(ngModel)]="newTask.description"
+        required
+        minlength="3"
+        #description="ngModel">
+        >
+      </textarea>
+      <mat-error *ngIf="description.invalid">Please enter a description.</mat-error>
+
+    </mat-form-field>
+    <br>
+    <button
+    type="submit"
+    mat-raised-button
+    color="accent">
+    Add Task
+    </button>
+  </form>
+
+</mat-card>

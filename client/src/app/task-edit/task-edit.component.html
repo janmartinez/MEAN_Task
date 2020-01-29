@@ -1,0 +1,35 @@
+<mat-card class="formbody">
+  <h3 class="text-center" >Edit a Task</h3>
+  <br>
+  <form (submit) ="editTask(oneTask._id)" #postForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Title"
+        type="text"
+        name="oneTask.title"
+        [(ngModel)]="oneTask.title"
+        >
+
+    </mat-form-field>
+          <br><br>
+    <mat-form-field>
+      <textarea
+        class="formtextarea"
+        matInput
+        name="oneTask.description"
+        [(ngModel)]="oneTask.description"
+        placeholder="Description">
+      </textarea>
+
+    </mat-form-field>
+    <br><br>
+    <button
+    type="submit"
+    mat-raised-button
+    color="accent">
+    Edit Task
+    </button>
+  </form>
+
+</mat-card>
